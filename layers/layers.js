@@ -1,21 +1,22 @@
+ol.proj.proj4.register(proj4);
+ol.proj.get("EPSG:32636").setExtent([-261547.382113, 371475.638440, 774835.737882, 1344774.568521]);
 var wms_layers = [];
 
-var lyr_id_106_20210415_071557_ssc17_u0001_visual_clip_0 = new ol.layer.Image({
-                            opacity: 1,
-                            title: "id_106_20210415_071557_ssc17_u0001_visual_clip",
-                            
-                            
-                            source: new ol.source.ImageStatic({
-                               url: "./layers/id_106_20210415_071557_ssc17_u0001_visual_clip_0.png",
+
+        var lyr_OpenStreetMap_0 = new ol.layer.Tile({
+            'title': 'OpenStreetMap',
+            'type': 'base',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
     attributions: ' ',
-                                projection: 'EPSG:3857',
-                                alwaysInRange: true,
-                                imageExtent: [3605503.082051, 493658.302728, 3606508.231976, 494666.149463]
-                            })
-                        });
+                url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            })
+        });
 var format_planet_locations_2021_1 = new ol.format.GeoJSON();
 var features_planet_locations_2021_1 = format_planet_locations_2021_1.readFeatures(json_planet_locations_2021_1, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:32636'});
 var jsonSource_planet_locations_2021_1 = new ol.source.Vector({
     attributions: ' ',
 });
@@ -28,11 +29,11 @@ var lyr_planet_locations_2021_1 = new ol.layer.Vector({
                 title: '<img src="styles/legend/planet_locations_2021_1.png" /> planet_locations_2021'
             });
 
-lyr_id_106_20210415_071557_ssc17_u0001_visual_clip_0.setVisible(true);lyr_planet_locations_2021_1.setVisible(true);
-var layersList = [lyr_id_106_20210415_071557_ssc17_u0001_visual_clip_0,lyr_planet_locations_2021_1];
+lyr_OpenStreetMap_0.setVisible(true);lyr_planet_locations_2021_1.setVisible(true);
+var layersList = [lyr_OpenStreetMap_0,lyr_planet_locations_2021_1];
 lyr_planet_locations_2021_1.set('fieldAliases', {'Record_Number': 'Record_Number', 'y': 'y', 'x': 'x', 'Planet_ImageID': 'Planet_ImageID', 'quality': 'quality', });
 lyr_planet_locations_2021_1.set('fieldImages', {'Record_Number': 'Range', 'y': 'TextEdit', 'x': 'TextEdit', 'Planet_ImageID': 'TextEdit', 'quality': 'TextEdit', });
-lyr_planet_locations_2021_1.set('fieldLabels', {'Record_Number': 'no label', 'y': 'no label', 'x': 'no label', 'Planet_ImageID': 'no label', 'quality': 'no label', });
+lyr_planet_locations_2021_1.set('fieldLabels', {'Record_Number': 'header label', 'y': 'no label', 'x': 'no label', 'Planet_ImageID': 'inline label', 'quality': 'no label', });
 lyr_planet_locations_2021_1.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
