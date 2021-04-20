@@ -79,20 +79,7 @@ var map = new ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({tipLabel: "Layers"});
 map.addControl(layerSwitcher);
 
-    var searchLayer = new SearchLayer({
-      layer: lyr_planet_locations_2021_1,
-      colName: 'Record_Number',
-      zoom: 10,
-      collapsed: true,
-      map: map
-    });
-
-    map.addControl(searchLayer);
-    document.getElementsByClassName('search-layer')[0]
-    .getElementsByTagName('button')[0].className +=
-    ' fa fa-binoculars';
-    
-map.getView().fit([-261547.382113, 371475.638440, 774835.737882, 1344774.568521], map.getSize());
+map.getView().fit([-519689.221448, 238216.805797, 860886.719136, 1515892.676275], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
