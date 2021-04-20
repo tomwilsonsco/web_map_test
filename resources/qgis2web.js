@@ -78,7 +78,23 @@ var map = new ol.Map({
 
 var layerSwitcher = new ol.control.LayerSwitcher({tipLabel: "Layers"});
 map.addControl(layerSwitcher);
+layerSwitcher.hidePanel = function() {};
+layerSwitcher.showPanel();
 
+
+    var searchLayer = new SearchLayer({
+      layer: lyr_Locationscaptured2021_109,
+      colName: 'record_number',
+      zoom: 10,
+      collapsed: true,
+      map: map
+    });
+
+    map.addControl(searchLayer);
+    document.getElementsByClassName('search-layer')[0]
+    .getElementsByTagName('button')[0].className +=
+    ' fa fa-binoculars';
+    
 map.getView().fit([-519689.221448, 238216.805797, 860886.719136, 1515892.676275], map.getSize());
 
 var NO_POPUP = 0
