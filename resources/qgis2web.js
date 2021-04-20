@@ -83,7 +83,7 @@ layerSwitcher.showPanel();
 
 
     var searchLayer = new SearchLayer({
-      layer: lyr_Locationscaptured2021_109,
+      layer: lyr_Locationscaptured2021_108,
       colName: 'record_number',
       zoom: 10,
       collapsed: true,
