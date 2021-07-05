@@ -69,10 +69,7 @@ var map = new ol.Map({
     overlays: [overlayPopup],
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
-            code: 'EPSG:32636',
-            extent: [-20037508.342789, -20037508.342789, 20037508.342789, 20037508.342789],
-            units: 'm'})
+         maxZoom: 28, minZoom: 1
     })
 });
 
@@ -83,7 +80,7 @@ layerSwitcher.showPanel();
 
 
     var searchLayer = new SearchLayer({
-      layer: lyr_Locationscaptured2021_109,
+      layer: lyr_Locationscaptured2021_130,
       colName: 'record_number',
       zoom: 10,
       collapsed: true,
@@ -95,7 +92,7 @@ layerSwitcher.showPanel();
     .getElementsByTagName('button')[0].className +=
     ' fa fa-binoculars';
     
-map.getView().fit([-519689.221448, 238216.805797, 860886.719136, 1515892.676275], map.getSize());
+map.getView().fit([2612365.287039, 236913.644457, 4061221.075386, 1541208.689030], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
